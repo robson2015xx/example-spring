@@ -1,0 +1,12 @@
+name: ci-spring-workflow
+on: push
+jobs:
+  check-application:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-spring@v2
+        with:
+          spring-version: 3.1.5
+      - run: mvn clean install
+      - run: java -jar ./target/example-spring.jar

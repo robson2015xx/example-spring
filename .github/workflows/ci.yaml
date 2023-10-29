@@ -7,6 +7,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-java@v2
         with:
-          spring-version: 3.1.5
+          java-version: 17
       - run: mvn clean install
       - run: java -jar ./target/example-spring.jar
